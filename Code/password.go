@@ -1,5 +1,3 @@
-//VO CUME
-
 package main
 
 import (
@@ -96,7 +94,7 @@ func main() {
 				fmt.Print("\n !AVISO:sua senha tem menos de 10 caracteres isso não é o recomendado")
 			}
 		} else {
-			fmt.Print("ERRO[1]:type não encontrado")
+			error(1)
 		}
 	} else if module == "decode" {
 		if typecode == "number" {
@@ -110,26 +108,39 @@ func main() {
 			}
 
 			ci := 0
-			//x := 0
 			//var caracteres = []int{}
 
 			for i := 0; i < lenpass; i++ {
+
 				for c := 0; c < 5; c++ {
 					fmt.Print(string(pass[ci]))
 					ci++
+
 				}
+				//caracteres = append(caracteres)
+
 				fmt.Print("-")
-				/*caracteres = append(caracteres, x)
-				fmt.Println(caracteres)*/
+
+				//fmt.Println(caracteres)
 			}
 
 			//fmt.Printf("Sua senha decodificada fica: %v", decode)
 		} else if typecode == "string" {
 
 		} else {
-
+			error(1)
 		}
 	} else {
-
+		error(2)
 	}
+}
+
+func error(e int) {
+	var erros = []string{
+		"_",                                  //0
+		"type não encontrado",                //1
+		"modo de codificação não encontrado", //2
+	}
+
+	fmt.Printf("Erro[%v]:%v\n", e, erros[e])
 }
