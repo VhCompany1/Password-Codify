@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	/*Principal Vars*/
 	module := os.Args[1]
 	typecode := os.Args[2]
 	pass := os.Args[3]
@@ -13,6 +14,7 @@ func main() {
 	var byteres = []byte{}
 	var ap int = 0
 	var res = []int{}
+	/*----------------------------------------------------*/
 
 	if module == "code" {
 		if typecode == "number" {
@@ -102,27 +104,31 @@ func main() {
 			lenpass := len(pass) / 5
 
 			if len(pass)%5 != 0 {
-				fmt.Print("Sua senha não esta corretamente codificada")
+				error(3)
 
 				return
 			}
 
 			ci := 0
-			//var caracteres = []int{}
+			var lote = []int{}
+			caracteres := 0
 
 			for i := 0; i < lenpass; i++ {
 
 				for c := 0; c < 5; c++ {
 					fmt.Print(string(pass[ci]))
+					lote = append(lote, int(pass[ci]))
 					ci++
 
 				}
-				//caracteres = append(caracteres)
+				//caracteres += lote
+				lote = []int{}
 
 				fmt.Print("-")
 
-				//fmt.Println(caracteres)
 			}
+
+			fmt.Println("\n", caracteres)
 
 			//fmt.Printf("Sua senha decodificada fica: %v", decode)
 		} else if typecode == "string" {
@@ -135,12 +141,18 @@ func main() {
 	}
 }
 
+/*Function for errors*/
 func error(e int) {
+	/*Errors*/
 	var erros = []string{
 		"_",                                  //0
 		"type não encontrado",                //1
 		"modo de codificação não encontrado", //2
+		"sua senha não esta corretamente codificada", //3
 	}
+	/*----------------------------------------------------*/
 
 	fmt.Printf("Erro[%v]:%v\n", e, erros[e])
 }
+
+/*----------------------------------------------------*/
