@@ -3,8 +3,10 @@ Este é um programa feito para proteger mais suas senhas, com ele você pode cod
 
 ### Informações basicas:
 
-Desenvolvedor: [VhCompany](https://github.com/Vhcompany1)
+Desenvolvedor: [VhCompany](https://github.com/Vhcompany1)<br>
 Nome: PasswordCodify
+Linguagem: Golang
+Versão: 1.2.3
 
 ### Dependencias:
 
