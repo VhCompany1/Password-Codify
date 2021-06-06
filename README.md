@@ -18,3 +18,5 @@ O PasswordCodify tem alguns codigos não tão simples para que fique dificil o u
 ### Comandos: 
 
 `go run password code number 5555888`
+
+[install]()
