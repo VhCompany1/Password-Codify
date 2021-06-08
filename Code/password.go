@@ -27,7 +27,9 @@ func main() {
 	if module == "code" {
 		code()
 	} else if module == "decode" {
-		decode()
+		if len(pass) == 5 {
+			decode()
+		}
 	} else {
 		error(2)
 	}
@@ -113,9 +115,6 @@ func code() {
 			ap = ap * 55
 
 			res = append(res, ap)
-
-			//numberbytelist := []int{48, 49, 50, 51, 52, 53, 54, 55, 56, 57}
-
 		}
 
 		fmt.Printf("Sua senha codificada fica: %v-", cl)
