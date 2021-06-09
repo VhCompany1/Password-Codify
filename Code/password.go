@@ -139,7 +139,7 @@ func decode() {
 		//decode := ""
 		lenpass := len(pass) / 5
 
-		if len(pass)%5 != 0 {
+		if lenpass%5 != 0 {
 			error(3)
 
 			return
