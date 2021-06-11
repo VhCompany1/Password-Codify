@@ -100,7 +100,7 @@ func code() {
 				}
 			} else {
 				cl = 109
-			}
+			}C:\Users\VICTOR\App01VVV
 		}
 
 		for i := 0; i < len(pass); i++ {
@@ -179,7 +179,6 @@ func error(e int) {
 		"Você não é o proprietario deste decodificador", //4
 	}
 	/*----------------------------------------------------*/
-
 	fmt.Printf("Erro[%v]:%v\n", e, erros[e])
 }
 
